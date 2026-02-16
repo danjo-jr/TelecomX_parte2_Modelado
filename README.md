@@ -99,8 +99,8 @@ A partir de los resultados obtenidos, se proponen las siguientes acciones:
 
 ## 📂 Estructura del Proyecto
 
-- `Challenge_TelecomX_LATAM.ipynb` → ETL y análisis exploratorio  
-- `Challenge_TelecomX_Parte2.ipynb` → Modelado predictivo  
+- `TelecomX_LATAM.ipynb` → ETL y análisis exploratorio  
+- `TelecomX_Parte2_Modelado.ipynb` → Modelado predictivo  
 - `datos_tratados.csv` → Dataset procesado  
 
 ---
