@@ -3,28 +3,21 @@
 ## 📌 Descripción del Proyecto
 
 Este proyecto forma parte del Challenge Telecom X del curso de Data Science.  
-El objetivo principal fue desarrollar modelos predictivos capaces de anticipar qué clientes tienen mayor probabilidad de cancelar sus servicios (churn), utilizando técnicas de Machine Learning.
+El objetivo fue desarrollar modelos de Machine Learning capaces de predecir qué clientes tienen mayor probabilidad de cancelar sus servicios (churn), además de identificar los factores que influyen en dicha decisión.
 
-El análisis incluye:
-
-- Preparación y limpieza de datos
-- Análisis exploratorio
-- Balanceo de clases
-- Entrenamiento y evaluación de modelos
-- Interpretación de variables relevantes
-- Propuestas estratégicas de retención
+El trabajo abarca desde la limpieza y transformación de datos hasta la construcción, evaluación e interpretación de modelos predictivos.
 
 ---
 
 ## 🎯 Objetivo
 
-Construir un modelo predictivo que permita identificar clientes con alto riesgo de cancelación y analizar los factores que influyen en dicha decisión, con el fin de generar recomendaciones estratégicas para reducir el churn.
+Construir un modelo predictivo que permita anticipar la cancelación de clientes y extraer insights estratégicos que apoyen la toma de decisiones en estrategias de retención.
 
 ---
 
 ## 🧠 Modelos Implementados
 
-Se entrenaron y compararon los siguientes modelos:
+Se entrenaron y evaluaron los siguientes modelos:
 
 - 🔹 Regresión Logística (con normalización)
 - 🔹 Random Forest
@@ -42,7 +35,7 @@ Las métricas utilizadas fueron:
 - F1-score
 - Matriz de Confusión
 
-### Resultados principales
+### Resultados comparativos (conjunto de prueba)
 
 | Modelo | Accuracy | Recall (Churn) | F1-score (Churn) |
 |----------|------------|----------------|------------------|
@@ -50,37 +43,34 @@ Las métricas utilizadas fueron:
 | Random Forest | 0.79 | 0.43 | 0.53 |
 | Random Forest (balanced) | 0.79 | 0.46 | 0.54 |
 
-🔎 Aunque la exactitud fue similar en todos los modelos, Random Forest con balanceo de clases mostró mejor desempeño en la detección de clientes que cancelan.
+Aunque la exactitud fue similar en todos los modelos, Random Forest con balanceo de clases mostró mejor capacidad para detectar clientes que cancelan.
 
 ---
 
-## 🔍 Principales Factores que Influyen en el Churn
+## ⚠️ Análisis de Overfitting y Underfitting
 
-El análisis de importancia de variables y coeficientes permitió identificar los siguientes factores clave:
+- La **Regresión Logística** mostró señales de underfitting, ya que su capacidad para detectar churn fue limitada (recall bajo).
+- El **Random Forest** alcanzó 100% de accuracy en entrenamiento y ~79% en prueba, lo que evidencia overfitting.  
+  Aun así, su desempeño en test fue estable y superior en detección de churn frente a los demás modelos.
 
-### 🔴 Factores que aumentan la probabilidad de cancelación
+---
+
+## 🔍 Factores que Más Influyen en la Cancelación
+
+El análisis de importancia de variables y coeficientes permitió identificar los principales factores asociados al churn:
+
+### 🔴 Factores de mayor riesgo
+- Baja antigüedad del cliente
 - Contrato mensual
 - Mayor cargo mensual
-- Baja antigüedad
-- Fibra óptica
-- Facturación electrónica
+- Ausencia de servicios adicionales
+- Menor número de servicios contratados
 
-### 🟢 Factores que reducen la probabilidad de cancelación
-- Mayor antigüedad del cliente
-- Contrato anual o bianual
-- Servicios adicionales como soporte técnico y seguridad en línea
-- Mayor número de servicios contratados
-
----
-
-## 📈 Conclusiones
-
-El churn está fuertemente asociado con la antigüedad y el tipo de contrato.  
-Los clientes nuevos y con contratos mensuales presentan mayor riesgo de cancelación.
-
-El modelo Random Forest balanceado permitió detectar aproximadamente el 46% de los clientes que cancelan, convirtiéndose en la mejor opción entre los modelos evaluados.
-
-Este análisis no solo permite predecir cancelaciones, sino también entender qué variables influyen más en el comportamiento del cliente.
+### 🟢 Factores de retención
+- Mayor antigüedad
+- Contratos anuales o bianuales
+- Servicios como soporte técnico y seguridad en línea
+- Mayor diversificación de servicios
 
 ---
 
@@ -88,43 +78,34 @@ Este análisis no solo permite predecir cancelaciones, sino también entender qu
 
 A partir de los resultados obtenidos, se proponen las siguientes acciones:
 
-- Implementar programas de fidelización durante los primeros meses del cliente.
-- Incentivar la migración a contratos anuales.
-- Promover la contratación de servicios adicionales (soporte técnico y seguridad).
-- Diseñar estrategias diferenciadas para clientes con alto cargo mensual.
+- Fortalecer la fidelización en los primeros meses del cliente.
+- Incentivar la migración a contratos de mayor duración.
+- Promover paquetes con servicios adicionales.
+- Diseñar estrategias específicas para clientes con alto cargo mensual y contrato mensual.
 
 ---
 
 ## 🛠 Tecnologías Utilizadas
 
-- Python
-- Pandas
-- NumPy
-- Scikit-Learn
-- Matplotlib
-- Seaborn
-- Google Colab
+- Python  
+- Pandas  
+- NumPy  
+- Scikit-Learn  
+- Matplotlib  
+- Seaborn  
+- Google Colab  
 
 ---
 
 ## 📂 Estructura del Proyecto
 
-- `Challenge_TelecomX_LATAM.ipynb` → ETL y análisis exploratorio
-- `Challenge_TelecomX_Parte2.ipynb` → Modelado predictivo
-- `datos_tratados.csv` → Dataset limpio utilizado para el modelado
+- `Challenge_TelecomX_LATAM.ipynb` → ETL y análisis exploratorio  
+- `Challenge_TelecomX_Parte2.ipynb` → Modelado predictivo  
+- `datos_tratados.csv` → Dataset procesado  
 
 ---
 
 ## 👤 Autor
 
 Danilo José Álvarez Rodríguez  
-Estudiante de Data Science  
-Proyecto académico – Challenge Telecom X
-
----
-
-## 🚀 Estado del Proyecto
-
-✔ Finalizado  
-✔ Modelos evaluados  
-✔ Conclusiones estratégicas desarrolladas  
+Proyecto académico – Challenge Telecom X  
